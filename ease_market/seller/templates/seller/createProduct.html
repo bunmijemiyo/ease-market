@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registration Page</title>
+    <!-- <link rel="stylesheet" href="../css/registration.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/registration.css' %}"
+    />
+  </head>
+  <body>
+    <form
+      action="{% url 'seller:create' %}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <div class="container">
+        <center>
+          <h1>Create Product Form<a href="{% url 'buyer:home' %}"> Home</a></h1>
+        </center>
+        <hr />
+        <label> Product name </label>
+        <input
+          type="text"
+          name="product_name"
+          placeholder="Enter Product name"
+          size="15"
+          required
+        />
+
+        <label for="quantity"><b>Quantity</b></label>
+        <input type="text" name="quantity" placeholder="quantity in stock"
+        size="20"/ required> Product Description :
+        <textarea
+          cols="60"
+          rows="4"
+          placeholder="Enter Product Information"
+          value=" Contact address"
+          required
+          name="description"
+        >
+        </textarea>
+        <label>Product Image: </label>
+        <!-- <input type="text" placeholder="Enter Email" name="email" required> 
+  --><input type="file" id="imageUpload" name="imageUpload" />
+        <br />
+        <label> Price: </label>
+        <input
+          type="number"
+          placeholder="Enter Password"
+          name="price"
+          required
+        />
+
+        <button type="submit" class="registerbtn">Upload Product</button>
+      </div>
+    </form>
+
+    <script src="{% static 'js/slugify.js' %}" type="text/javascript"></script>
+  </body>
+</html>

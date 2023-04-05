@@ -1,0 +1,33 @@
+{% load static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ease Market Products</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/listsell.css' %}"
+    />
+  </head>
+  <body style="background-color: aqua">
+    <h3><a href="{% url 'buyer:home' %}">Home</a></h3>
+    <div class="container">
+      <img src="{{item.thumb.url}}" alt="Product Image" class="product-image" />
+      <div class="product-name">Product name: {{item.name}}</div>
+      <div class="product-description">
+        Product Description: {{item.description}}
+      </div>
+      <div class="product-price">Price: {{item.price}}</div>
+      <div class="product-price">Seller Contact: {{seller.phone}}</div>
+      <div class="product-price">Seller name: {{seller.fullname}}</div>
+      <div class="product-price">Seller email: {{seller.email}}</div>
+      <div class="product-price">Seller Address: {{seller.address}}</div>
+      <div class="product-price">Seller Location: {{seller.state}}</div>
+    </div>
+  </body>
+</html>
+{% endblock %}

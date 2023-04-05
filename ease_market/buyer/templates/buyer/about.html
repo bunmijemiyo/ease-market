@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Ease Market Store</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/about.css' %}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'buyer:home' %}">Home</a></li>
+          <li><a href="{% url 'seller:signup' %}">SignUp</a></li>
+          <li><a href="{% url 'buyer:products_list' %}">Products</a></li>
+          <li><a href="{% url 'buyer:about' %}">About Us</a></li>
+          <!-- <li><a href="contact.html">Contact Us</a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="about-us">
+        <h1>About Us</h1>
+        <p>
+          Welcome to My E-Commerce Store, your one-stop-shop for all your online
+          shopping needs! We are a team of passionate individuals who love
+          nothing more than providing our customers with high-quality products
+          at affordable prices.
+        </p>
+
+        <p>
+          At My E-Commerce Store, we believe that shopping should be easy and
+          stress-free. That's why we offer a wide range of products, from
+          clothing and accessories to home goods and electronics. Our online
+          store is open 24/7, so you can shop whenever you want from the comfort
+          of your own home.
+        </p>
+
+        <p>
+          We also take pride in our exceptional customer service. If you have
+          any questions or concerns, our friendly and knowledgeable team is here
+          to help. We strive to make every customer experience a positive one,
+          and we are always looking for ways to improve.
+        </p>
+
+        <p>
+          Thank you for choosing Ease Market for your online shopping needs. We
+          look forward to serving you!
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Ease Market</p>
+    </footer>
+  </body>
+</html>

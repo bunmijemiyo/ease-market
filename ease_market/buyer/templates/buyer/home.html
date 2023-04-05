@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ease Market</title>
+  <link rel="stylesheet" href="style.css" title="Landing page" />
+ <style >
+ *{
+   margin:0;
+   padding:0;
+ } 
+ 
+ body{
+   background-repeat:none;
+ }
+ 
+          /* Header styling */
+ header{
+   background-image:url("{% static 'images/landing4.jpg' %}");
+   background-repeat:none;
+   padding-left: 0;
+   padding-right: 0;
+   padding-bottom:10px;
+   text-align:center;
+   color: whitesmoke;
+   border:20%;
+   opacity:0.8px;
+ }
+.first-display {
+  display :flex;
+  flex-direction :row;
+  gap: 650px;
+}
+header > div button{
+  padding:10px;
+  color: white;
+}
+
+header > h1 , h2{
+margin:30px 5px 30px 5px;
+padding:50px 20px 50px 20px;
+  
+}
+ header > div .second-btn{
+margin-bottom:40px;
+margin-top:40px;
+padding:20px 50px 20px 50px;
+font-size:30px;
+font-weight: bolder;
+border-radius:35px;
+border:none;
+background-color:#ba791e;
+
+ }
+ .home-image{
+   display:flex;
+  flex-direction:row;
+  justify-content:center;
+  width:100%;
+  padding:27px 8px 27px 8px;
+  gap:45px;
+  background-color:white;
+  background-size: 200px;
+ }
+ 
+/* This is first section */
+ .first{
+   display: flex;
+   flex-direction: row;
+   margin-right:5%;
+   margin-left:5%;
+   margin-bottom:90px;
+   gap:10px;
+   height:550px;
+   background-color: gray;
+   
+   }
+ .first > .real{
+   margin-top:50px;
+}
+
+.first > .real form{
+  margin-top :60px;
+  margin-left:1%;
+  margin-right:1%;
+}
+.first > .real h1{
+  margin-top:2px;
+  font-size:50px;
+  font-weight:bold;
+}
+.first > .real p{
+font-size:32px;
+}
+
+
+.first > .real form input[type="text"],.real form input[type="email"]{
+  background-color: pink;
+  padding:22px;
+  border:none;
+  border-radius:6px;
+  font-size:13px;
+  font-weight :bold;
+}
+
+
+
+.first > .real button{
+border-radius :6px;
+padding:20px 65px 20px 65px;
+font-size:20px;
+border-radius:35px;
+border:none;
+background-color:#ba791e;
+color:white;
+font-weight:bolder;
+
+}
+
+.first > img{
+  margin-top :60px;
+  width:200px;
+  height:200px;
+}
+.first > first > .real form input[type="text"],.real form input[type="email"], .real button{
+  gap:100px;
+  justify-content :space-around;
+}
+
+/*
+
+.second{
+  display:flex;
+  flex-direction:row;
+  margin-left:1%;
+  margin-right:1%;
+  gap:8px;
+  background-color:#6E7978;
+  margin-bottom: 60px;
+  top:2px;
+  padding-top:90px;
+  position:absolute ;
+  top:100rem;
+  bottom:300px;
+}
+
+.second > .jess p,h1,h3{
+  font-size:8px;
+  width: 80%;
+  padding:2px 2px 2px 2px;
+}
+.second > img{
+  width:450px;
+  height:650px;
+}
+.second > .jess .para{
+  padding-left:3px;
+  margin-right:18px;
+  margin-top:2px;
+  margin-bottom:2px;
+  font-size:8px;
+}
+.second > .jess p{
+  font-size: 8px;
+}
+
+.second > .jess h1 {  
+  font-size: 35px;
+}
+.second > .jess h3{
+  font-size :23px;
+}
+.second > .jess button{
+  margin-bottom:40px;
+  margin-top:10px;
+  padding:20px 50px 20px 50px;
+  font-size:30px;
+  font-weight: bolder;
+  border-radius:35px;
+  border:none;
+  background-color:#ba791e;
+  color:white;
+}
+.second > .jess{
+  padding: 16px;
+}
+*/
+
+footer {
+  padding: 50px;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: #e8491d;
+  text-align: center;
+  
+}
+
+ </style> 
+</head>
+
+<body>
+  {% include 'nav.html' %}
+<header>
+  <div class="first-display">
+      <!-- This is nav bar of the header-->
+  <img src="{% static 'images/ease-market.jpg' %}" alt="image" width="200px" height="200px">
+  <!-- <img src="../../../static_folder/images/ease-market.jpg" alt="image" width="200px" height="200px"> -->
+ <!-- <button type="submit" class="first_btn">Book An Iterms </button>
+ -->
+  </div>
+  
+  <div>
+  <h1>
+    Build a sustainable multi 6 or 7-figure Product business, without burnout and old school marketing tactics
+  </h1>
+  <h2>
+    There's a better way to build your business with less
+    hustle for more money, freedom, and impact.
+  </h2>
+  <button type="submit" class="second-btn"><a href="{% url 'buyer:products_list' %}">Check out Our Produts</a>
+    </button>
+</div>
+</header>
+
+ <div class="home-image">
+   <img src="{% static 'images/landing4.jpg' %}" alt="image" >
+   
+   <img src="{% static 'images/forbes.jpg' %}" alt="image">
+  
+    <img src="{% static 'img/radio.jpg' %}" alt="image" >
+    <!--
+     <img src="img/iheart-colored.png" alt="image" >
+    --->
+    
+      <img  class="labcoat"  src="{% static 'images/labcoat.jpg' %}" alt="image" width="200px" height="90px">
+      
+ </div>
+
+<section class="first">  
+    <!-- A short form and a writeup -->
+    
+      <<img src="{% static 'images/listing-book.jpg' %}" alt="image" >
+      
+      <div class="real">
+      <h1>
+      Stuck at 6-figures in your Products Business?
+      </h1><br>
+      <p>
+        The Listings Lab Guide will show you how you can double your revenue without sacrificing your lifestyle or freedom.
+      </p>
+      
+      <form>
+        <div> 
+          <input type="text" id="first name" name="first name" placeholder="First Name" required>
+          
+           <input type="email" id="email" name="email" placeholder="EMAIL" required>
+           <button type="submit">Ask Question</button>
+        </div>
+      </form>
+    </div>
+</section>
+
+</main>
+
+<footer>
+  <div>
+  <p>
+  EASE MARKET SHOPPING &copy 2023 | TERMS AND CONDITIONS | PRIVACY POLICY | COOKIE POLICY | CONTACT 
+  </p>
+  </div >
+</footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Registration Page</title>
+<!-- <link rel="stylesheet" href="../css/registration.css" /> -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/registration.css' %}">
+
+</head>  
+<body>  
+  
+<form action="{% url 'seller:signup' %}" method="post">   {% csrf_token %}
+  <div class="container">  
+  <center>  <h1> {% if error_message %} {{error_message}}, Register Again {% else %} Seller
+    Registration Form <a href="{% url 'seller:login' %}"> Login</a>{% endif %}</h1> </center>  
+  <hr>  
+  <label> Username </label>   
+<input type="text" name="username" placeholder= "Username" size="15" required />
+
+<div>  
+<label>   
+State :  
+</label>   
+  
+<select name="state">  
+   <option value="Abia">Abia</option>
+   <option value="Adamawa">Adamawa</option>
+   <option value="Akwa Ibom">Akwa Ibom</option>
+   <option value="Anambra">Anambra</option>
+   <option value="Bauchi">Bauchi</option>
+   <option value="Bayelsa">Bayelsa</option>
+   <option value="Benue">Benue</option>
+   <option value="Borno">Borno</option>
+   <option value="Cross River">Cross River</option>
+   <option value="Delta">Delta</option>
+   <option value="Ebonyi">Ebonyi</option>
+   <option value="Edo">Edo</option>
+   <option value="Ekiti">Ekiti</option>
+   <option value="Enugu">Enugu</option>
+   <option value="Gombe">Gombe</option>
+   <option value="Imo">Imo</option>
+   <option value="Jigawa">Jigawa</option>
+   <option value="Kaduna">Kaduna</option>
+   <option value="Kano">Kano</option>
+   <option value="Katsina">Katsina</option>
+   <option value="Kebbi">Kebbi</option>
+   <option value="Kogi">Kogi</option>
+   <option value="Kwara">Kwara</option>
+   <option value="Lagos">Lagos</option>
+   <option value="Nasarawa">Nasarawa</option>
+   <option value="Niger">Niger</option>
+   <option value="Ogun">Ogun</option>
+   <option value="Ondo">Ondo</option>
+   <option value="Oyo">Oyo</option>
+   <option value="Plateau">Plateau</option>
+   <option value="Rivers">Rivers</option>
+   <option value="Sokoto">Sokoto</option>
+   <option value="Taraba">Taraba</option>
+   <option value="Yobe">Yobe</option>
+   <option value="Zamfara">Zamfara</option>
+</select>  
+</div>  
+ <label for="fullname"><b>Full name</b></label>  
+ <input type="text" name="fullname" required>  
+  
+<div>  
+<label>   
+Gender :  
+</label><br>  
+<input type="radio" value="Male" name="gender" checked > Male   
+<input type="radio" value="Female" name="gender"> Female   
+<input type="radio" value="Other" name="gender"> Other  
+  
+</div>  
+<label>   
+Phone Number:  
+</label>  
+<input type="text" name="phone" placeholder="Country Code"  value="+234" size="2"/>   
+<input type="text" name="country" placeholder="Country Name." size="20"/ required>   
+Contact Address :  
+<textarea cols="60" rows="4" placeholder="Current Address" value=" Contact address" required name="address">  
+</textarea>  
+ <label for="email"><b>Email</b></label>  
+ <input type="text" placeholder="Enter Email" name="email" required>  
+  
+    <label for="password"><b>Password</b></label>  
+    <input type="password" placeholder="Enter Password" name="password" required >  
+  
+    <label for="password2"><b>Re-type Password</b></label>  
+    <input type="password" placeholder="Retype Password" name="password2" required>  
+    <button type="submit" class="registerbtn">Register</button>    
+</form>  
+</body>  
+</html>  
+
+
+
+

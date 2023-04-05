@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <!-- <link rel="stylesheet" href="../css/Login.css" /> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Login.css' %}">
+</head>
+
+<body>
+  <form action="login" method="post"> {% csrf_token %}
+  <div class="login-box">
+    <h1>{% if error_message %} {{error_message}} {% else %} Login {% endif %} <a href="{% url 'buyer:home' %}"> Home</a></h1>
+    <div class="texbox">
+      <input type="text" placeholder="username" name="username">
+
+    </div>
+
+    <div class="texbox">
+      <input type="password" placeholder="password" name="password">
+    </div>
+
+    <!-- <div class="texbox">
+      <input type="gmail" placeholder="gmail">
+    </div> -->
+
+    <div>
+      <input class="btn" type="submit" value="sign in" />
+    </div>
+  </form>
+</body>
+
+</html>
+
+
+
+

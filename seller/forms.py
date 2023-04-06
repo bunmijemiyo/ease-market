@@ -17,15 +17,3 @@ class CreateSeller(forms.ModelForm):
 
 
 
-# class CreateRegistrations(forms.ModelForm):
-
-# 	class Meta:
-# 		model = Registrations
-# 		fields = [
-# 			'name', 
-# 	        'price',
-# 	        'quantity',
-# 	        'description',
-# 			'slug',
-# 			'thumb'
-# 	    ]

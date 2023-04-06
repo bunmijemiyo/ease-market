@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.hashers import make_password, check_password
+from django.views.decorators.csrf import csrf_protect
 from .models import User, Product
 from django.views import View
 from django.http import HttpResponse
@@ -7,6 +8,7 @@ from django.http import HttpResponseForbidden
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
+@csrf_protect
 def registration_view(request):
 	if request.method == 'POST':
 		username = request.POST.get('username')
@@ -48,6 +50,7 @@ def registration_view(request):
 	return render(request, 'seller/registration.html')
 
 
+@csrf_protect
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -67,23 +70,8 @@ def login_view(request):
 
     return render(request, 'seller/logins.html')
 
-def login_viewt(request):
-    print("one")
-    if request.method == 'POST':
-        print("two")
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        print("a")
-        user = authenticate(username=username, password=password)
-        print("b")
-        if user is not None:
-            login(request, user)
-            return redirect('home')  # replace 'home' with your desired URL
-        else:
-            messages.error(request, 'Invalid username or password.')
-    return render(request, 'seller/logins.html')
 
-
+@csrf_protect
 def createProduct(request):
 	if request.method == 'POST':
 		product_name = request.POST.get('product_name')

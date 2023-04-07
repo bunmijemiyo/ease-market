@@ -8,7 +8,7 @@ from django.http import HttpResponseForbidden
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
-@csrf_protect
+# @csrf_protect
 def registration_view(request):
 	if request.method == 'POST':
 		username = request.POST.get('username')
@@ -50,7 +50,7 @@ def registration_view(request):
 	return render(request, 'seller/registration.html')
 
 
-@csrf_protect
+# @csrf_protect
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -71,7 +71,7 @@ def login_view(request):
     return render(request, 'seller/logins.html')
 
 
-@csrf_protect
+# @csrf_protect
 def createProduct(request):
 	if request.method == 'POST':
 		product_name = request.POST.get('product_name')
